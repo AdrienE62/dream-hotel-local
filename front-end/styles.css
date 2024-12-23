@@ -1,4 +1,4 @@
-Rose Pâle : #FFC0CB
+/* Rose Pâle : #FFC0CB
 Rose Bonbon : #FF69B4
 Rose Pastel : #F7B6BA
 Beige Clair : #F5F5DC
@@ -7,4 +7,34 @@ Blanc Cassé : #F5F5F5
 Or Rose : #B76E79
 Lavande : #E6E6FA
 Violet Pâle : #DB7093
-Crème : #FFFDD0
+Crème : #FFFDD0 */
+
+.heart-shape {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  margin-top: 10px;
+}
+
+.heart-shape::before,
+.heart-shape::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 52px;
+  height: 80px;
+  border-radius: 50px 50px 0 0;
+  background: rgba(255, 192, 203, 0.6);
+}
+
+.heart-shape::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart-shape::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}

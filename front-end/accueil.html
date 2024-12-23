@@ -1,90 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <title>Accueil</title>
 </head>
 
-<body>
+<body class="flex flex-col ">
 
-
-  <nav class="top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-    <div class="px-3 py-3 lg:px-5 lg:pl-3">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center justify-start rtl:justify-end">
-          <a href="https://flowbite.com" class="flex ms-2 md:me-24">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
-            <span
-              class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Flowbite</span>
-          </a>
-        </div>
-        <div class="flex items-center">
-          <div class="flex items-center ms-3">
-            <div>
-              <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
-                type="button" id="menu"
-                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-                <span class="sr-only">Open sidebar</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path clip-rule="evenodd" fill-rule="evenodd"
-                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
-                  </path>
-                </svg>
-              </button>
-
+  <header>
+    <nav class="top-0 z-50 py-50 bg-local bg-center bg-no-repeat bg-cover h-[90vh] border-b border-gray-200"
+      style="background-image: url(./images/chateaurincesse.jpg);">
+      <div class="px-3 py-3 lg:px-5 lg:pl-3">
+        <div class="flex justify-center">
+          <div class="flex items-center justify-center basis-full">
+            <img src="./images/palaisprincesse.png" alt=""
+              class="self-center mt-[30vh] text-xl max-w-[85%] lg:max-w-[100%] bg-[#FFC0CB]/[.4] p-2 rounded-[50px]">
+            <div class="heart-shape max-w-[80%] lg:max-w-[100%]"></div>
+          </div>
+          <div class="absolute right-0 flex">
+            <div class="ms-3">
+              <div>
+                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+                  type="button" id="menu"
+                  class="inline-flex items-center p-2 text-sm text-[#FF69B4] rounded-lg hover:bg-[#FFC0CB] bg-[#FFC0CB]/50 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                  <span class="sr-only">Open sidebar</span>
+                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" fill-rule="evenodd"
+                      d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                    </path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </nav>
+
+    <aside id="logo-sidebar"
+      class="fixed top-0 z-40 w-1/2 md:w-96 h-screen pt-20 transition-transform hidden translate-x-full bg-[#FF69B4]/50 border-r border-gray-200"
+      aria-label="Sidebar">
+      <div class="h-full px-3 pb-4 overflow-y-auto">
+        <ul class="space-y-2 font-medium text-center" id="boutonpage">
+          <li>
+            <a href="./accueil.html" class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Accueil</span>
+            </a>
+          </li>
+          <li>
+            <a href="./hebergement.html"
+              class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Chambre</span>
+            </a>
+          </li>
+          <li>
+            <a href="./restauration.html"
+              class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Restauration</span>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html" class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Service</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Contact</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </aside>
+  </header>
+
+  <main class="flex min-h-screen bg-[#FFFDD0] flex-col">
+
+    <div class="container p-6 mx-auto">
+      <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+        <div class="lg:flex">
+          <div class="lg:w-1/2">
+            <img src="./images/articleaccueil.jpg" alt="Présentation" class="object-cover w-full h-full">
+          </div>
+          <div class="p-6 lg:w-1/2">
+            <h2 class="mb-4 text-3xl font-bold">Bienvenue au Palais des Princesses
+            </h2>
+            <p class="mb-4 text-black">Au Palais des Princesses, on vous offre une expérience royale inoubliable.
+              Découvrez nos services exclusifs tels que "Reine d'un Jour", notre salon de beauté royal, et notre spa de
+              princesse pour une détente ultime. Promenez-vous dans notre jardin enchanté et laissez-vous séduire par le
+              charme et l'élégance de nos espaces. Que vous soyez ici pour une escapade romantique, un voyage d'affaires
+              ou une célébration spéciale, notre équipe dévouée est à votre disposition pour répondre à tous vos
+              besoins.
+            </p>
+            <a href="#" class="px-4 py-2 text-white bg-[#F7B6BA] rounded hover:bg-[#B76E79]">En savoir plus</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
 
-  <aside id="logo-sidebar"
-    class="fixed top-0 z-40 w-96 h-screen pt-20 transition-transform hidden translate-x-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
-    aria-label="Sidebar">
-    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-      <ul class="space-y-2 font-medium text-center">
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <span class="flex-1 ms-3 whitespace-nowrap">Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <span class="flex-1 ms-3 whitespace-nowrap">Kanban</span>
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <span class="flex-1 ms-3 whitespace-nowrap">Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <span class="flex-1 ms-3 whitespace-nowrap">Kanban</span>
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <span class="flex-1 ms-3 whitespace-nowrap">Dashboard</span>
-          </a>
-        </li>
-
-      </ul>
+    <div class="container p-6 mx-auto">
+      <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+        <div class="flex flex-col-reverse lg:flex-row">
+          <div class="p-6 lg:w-1/2">
+            <h2 class="mb-4 text-3xl font-bold">Bienvenue au Palais des Princesses
+            </h2>
+            <p class="mb-4 text-black drop-shadow-lg">Au Palais des
+              Princesses, on vous offre une expérience royale
+              inoubliable.
+              Découvrez nos services exclusifs tels que "Reine d'un Jour", notre salon de beauté royal, et notre spa de
+              princesse pour une détente ultime. Promenez-vous dans notre jardin enchanté et laissez-vous séduire par le
+              charme et l'élégance de nos espaces. Que vous soyez ici pour une escapade romantique, un voyage d'affaires
+              ou une célébration spéciale, notre équipe dévouée est à votre disposition pour répondre à tous vos
+              besoins.
+            </p>
+            <a href="#" class="px-4 py-2 text-white bg-[#F7B6BA] rounded hover:bg-[#B76E79]">En savoir plus</a>
+          </div>
+          <div class="lg:w-1/2">
+            <img src="./images/articleaccueil.jpg" alt="Présentation" class="object-cover w-full h-full">
+          </div>
+        </div>
+      </div>
     </div>
-  </aside>
 
+  </main>
 
+  <footer class="flex-1 bg-[#F7B6BA] shadow">
+    <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <button id="ButtonPalais" class="flex items-center mb-4 ml-6 space-x-3 sm:mb-0 rtl:space-x-reverse">
+          <img src="./images/palaisprincesse.png"
+            class="lg:h-20 md:h-16 h-14 sm:text-2xl whitespace-nowrap bg-[#F5F5DC] text-white items-center p-2 text-white rounded-[20px]"
+            alt="logo" />
+        </button>
+        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0">
+          <li>
+            <a href="./contact.html" class="hover:underline">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <hr class="my-6 border-white sm:mx-auto lg:my-8" />
+      <span class="block text-sm text-white sm:text-center">© 2024 Adrien et Jonathan. Tout Droits Reservés.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
