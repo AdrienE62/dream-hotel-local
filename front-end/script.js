@@ -49,7 +49,7 @@ function loveexplosion() {
 
 };
 
-document.getElementById("boutonpage").addEventListener("click", loveexplosion);
+loveexplosion();
 
 let buttonPalais = document.getElementById("ButtonPalais");
 
