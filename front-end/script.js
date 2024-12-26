@@ -1,8 +1,8 @@
 //================================================================================================================================================================================================
-// Info: Récuperation de l'API
+// Info: Récuperation des l'API
 //================================================================================================================================================================================================
 
-async function fetchApi() {
+async function fetchApiChambre() {
 
   try {
 
@@ -14,9 +14,35 @@ async function fetchApi() {
 
     }
 
-    const dataTable = await response.json();
-    console.log(dataTable);
-    return dataTable;
+    const dataTableChambre = await response.json();
+    console.log(dataTableChambre);
+    return dataTableChambre;
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+};
+
+async function fetchApiRestau() {
+
+  try {
+
+    const response = await fetch("http://localhost:1337/api/restaurations?populate=*");
+
+    if (!response.ok) {
+
+      throw new Error("Could not fetch resource");
+
+    }
+
+    const dataTableRestau = await response.json();
+    console.log(dataTableRestau);
+    return dataTableRestau;
 
   }
 
@@ -33,13 +59,19 @@ async function fetchApi() {
 //================================================================================================================================================================================================
 
 let globalDataChambre;
-let dataModifChambre;
+let globalDataRestau;
 
-fetchApi().then(data => {
+fetchApiChambre().then(data => {
 
   globalDataChambre = data;
-  dataModifChambre = globalDataChambre;
   afficherDataChambre(globalDataChambre);
+
+});
+
+fetchApiRestau().then(data => {
+
+  globalDataRestau = data;
+  afficherDataRestau(globalDataRestau);
 
 });
 
@@ -68,6 +100,37 @@ function afficherDataChambre(dataa) {
                 <p class="lg:mb-96 mb-4 text-black">${user.description}
                 </p>
                 <h2 class="mb-1 text-4xl font-medium text-green-400">${user.price}€</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+  });
+
+};
+
+function afficherDataRestau(dataa) {
+
+  const afficherRestau = document.getElementById("restau");
+  afficherRestau.innerHTML = '';
+
+  dataa.data.forEach(user => {
+
+    afficherRestau.innerHTML +=
+      `<div class="lg:w-1/2">
+        <div class="container p-6 my-6 mb-0 mx-auto">
+          <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+            <div class="">
+              <div class="">
+                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation"
+                  class="object-cover w-full h-full">
+              </div>
+              <div class="p-6">
+                <h2 class="mb-4 text-3xl font-bold">${user.titre}
+                </h2>
+                <p class="mb-4 text-black">${user.description}
+                </p>
               </div>
             </div>
           </div>
