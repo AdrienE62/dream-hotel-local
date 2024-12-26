@@ -1,5 +1,5 @@
 {
-  "name": "dream-hotel-strapi",
+  "name": "back-end",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -31,6 +31,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "7300508b-1f60-40bf-8c64-586a99034c6c"
+    "uuid": "b51782f6-f148-4991-9d7d-9e1eccd34718"
   }
 }
