@@ -32,14 +32,14 @@ async function fetchApi() {
 // Info: Synchronisation data dans des constantes
 //================================================================================================================================================================================================
 
-let globalData;
-let dataModif;
+let globalDataChambre;
+let dataModifChambre;
 
 fetchApi().then(data => {
 
-  globalData = data;
-  dataModif = globalData;
-  afficherData(globalData);
+  globalDataChambre = data;
+  dataModifChambre = globalDataChambre;
+  afficherDataChambre(globalDataChambre);
 
 });
 
@@ -47,25 +47,28 @@ fetchApi().then(data => {
 // Info: Fonction pour afficher la data de l'API en random avec animation
 //================================================================================================================================================================================================
 
-function afficherData(dataa) {
+function afficherDataChambre(dataa) {
 
   const afficherChambre = document.getElementById("chambre");
   afficherChambre.innerHTML = '';
 
   dataa.data.forEach(user => {
+
     afficherChambre.innerHTML +=
-      `<div class="container p-6 my-6 mt-0 mx-auto">
-        <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
-          <div class="lg:flex">
-            <div class="lg:w-1/2">
-              <img src="./images/articleaccueil.jpg" alt="Présentation" class="object-cover w-full h-full">
-            </div>
-            <div class="p-6 lg:w-1/2">
-              <h2 class="mb-4 text-3xl font-bold">${user.titre}
-              </h2>
-              <p class="mb-4 text-black">${user.description}
-              </p>
-              <h2 class="mb-1 text-xl font-medium text-green-400 dark:text-green-400 pb-4">${user.price}€</h2>
+      `<div class="w-full bg-[${user.color}]">
+        <div class="container p-6 mx-auto">
+          <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+            <div class="lg:flex">
+              <div class="lg:w-1/2">
+                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation" class="object-cover w-full h-full">
+              </div>
+              <div class="p-6 lg:w-1/2">
+                <h2 class="mb-4 text-3xl font-bold">${user.titre}
+                </h2>
+                <p class="lg:mb-96 mb-4 text-black">${user.description}
+                </p>
+                <h2 class="mb-1 text-4xl font-medium text-green-400">${user.price}€</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +89,7 @@ setTimeout(() => {
   sideBar.classList.remove('left-0');
   sideBar.classList.remove('hidden');
 
-}, 30);
+}, 40);
 
 
 setInterval(() => {

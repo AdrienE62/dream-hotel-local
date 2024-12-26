@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiChambreChambre extends Struct.CollectionTypeSchema {
   collectionName: 'chambres';
   info: {
+    description: '';
     displayName: 'chambre';
     pluralName: 'chambres';
     singularName: 'chambre';
@@ -380,6 +381,7 @@ export interface ApiChambreChambre extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    color: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

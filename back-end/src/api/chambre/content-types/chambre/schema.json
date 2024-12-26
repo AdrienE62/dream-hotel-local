@@ -4,7 +4,8 @@
   "info": {
     "singularName": "chambre",
     "pluralName": "chambres",
-    "displayName": "chambre"
+    "displayName": "chambre",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,14 +22,18 @@
       "type": "decimal"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "color": {
+      "type": "string"
     }
   }
 }
