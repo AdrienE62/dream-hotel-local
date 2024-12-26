@@ -1,0 +1,34 @@
+{
+    "kind": "collectionType",
+    "collectionName": "chambres",
+    "info": {
+        "singularName": "chambre",
+        "pluralName": "chambres",
+        "displayName": "chambre"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "titre": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "price": {
+            "type": "decimal"
+        },
+        "image": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false
+        }
+    }
+}
