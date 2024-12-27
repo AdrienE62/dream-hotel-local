@@ -15,7 +15,6 @@ async function fetchApiChambre() {
     }
 
     const dataTableChambre = await response.json();
-    console.log(dataTableChambre);
     return dataTableChambre;
 
   }
@@ -41,7 +40,6 @@ async function fetchApiRestau() {
     }
 
     const dataTableRestau = await response.json();
-    console.log(dataTableRestau);
     return dataTableRestau;
 
   }
@@ -67,7 +65,6 @@ async function fetchApiService() {
     }
 
     const dataTableService = await response.json();
-    console.log(dataTableService);
     return dataTableService;
 
   }
@@ -220,14 +217,14 @@ setTimeout(() => {
   sideBar.classList.remove('left-0');
   sideBar.classList.remove('hidden');
 
-}, 40);
+}, 100);
 
 
 setInterval(() => {
 
   sideBar.classList.remove('-translate-x-full');
 
-}, 1);
+}, 2);
 
 //================================================================================================================================================================================================
 // Info: Fonction pour les confettis coeur
