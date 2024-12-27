@@ -17,10 +17,14 @@
       style="background-image: url(./images/chateaurincesse.jpg);">
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex justify-center">
-          <div class="flex items-center justify-center basis-full">
-            <img src="./images/palaisprincesse.png" alt=""
-              class="self-center mt-[30vh] text-xl max-w-[85%] lg:max-w-[100%] bg-[#FFC0CB]/[.4] p-2 rounded-[50px]">
-            <div class="heart-shape max-w-[80%] lg:max-w-[100%]"></div>
+          <div class="flex flex-col">
+            <div class="flex items-center justify-center basis-full">
+              <img src="./images/palaisprincesse.png" alt=""
+                class="self-center mt-[30vh] text-xl max-w-[85%] lg:max-w-[100%] bg-[#FFC0CB]/[.4] p-2 rounded-[50px]">
+              <div class="heart-shape max-w-[80%] lg:max-w-[100%]"></div>
+            </div>
+            <img src="./images/titres/contact.png" alt=""
+              class="self-center mt-[10vh] text-xl max-w-[40%] lg:max-w-[25%] bg-[#FFC0CB]/[.4] p-2 rounded-[50px]">
           </div>
           <div class="absolute right-0 flex">
             <div class="ms-3">
@@ -83,6 +87,38 @@
 
   <main class="flex min-h-screen bg-[#FFFDD0] flex-col">
 
+    <section class="">
+      <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">Contactez nous
+        </h2>
+        <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">Avez-vous un souci technique ? Vous
+          souhaitez partager des retours concernant une fonctionnalité bêta ? Pour plus d'informations sur notre plan
+          d'affaires ? Faites-nous part de cela.</p>
+        <form action="#" class="space-y-8">
+          <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Votre email</label>
+            <input type="email" id="email"
+              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+              placeholder="nom@mail.com" required>
+          </div>
+          <div>
+            <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Sujet</label>
+            <input type="text" id="subject"
+              class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
+              placeholder="Faites-nous savoir comment nous pouvons vous aider" required>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Votre message</label>
+            <textarea id="message" rows="6"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+              placeholder="Laissez un commentaire..."></textarea>
+          </div>
+          <button type="submit"
+            class="py-3 px-5 text-sm font-medium text-center rounded-lg sm:w-fit text-white bg-[#F7B6BA] rounded hover:bg-[#B76E79] focus:ring-4 focus:outline-none focus:ring-primary-300">Envoyer
+            le message</button>
+        </form>
+      </div>
+    </section>
 
   </main>
 

@@ -1,8 +1,8 @@
 //================================================================================================================================================================================================
-// Info: Récuperation de l'API
+// Info: Récuperation des l'API
 //================================================================================================================================================================================================
 
-async function fetchApi() {
+async function fetchApiChambre() {
 
   try {
 
@@ -14,9 +14,61 @@ async function fetchApi() {
 
     }
 
-    const dataTable = await response.json();
-    console.log(dataTable);
-    return dataTable;
+    const dataTableChambre = await response.json();
+    console.log(dataTableChambre);
+    return dataTableChambre;
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+};
+
+async function fetchApiRestau() {
+
+  try {
+
+    const response = await fetch("http://localhost:1337/api/restaurations?populate=*");
+
+    if (!response.ok) {
+
+      throw new Error("Could not fetch resource");
+
+    }
+
+    const dataTableRestau = await response.json();
+    console.log(dataTableRestau);
+    return dataTableRestau;
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+};
+
+async function fetchApiService() {
+
+  try {
+
+    const response = await fetch("http://localhost:1337/api/services?populate=*");
+
+    if (!response.ok) {
+
+      throw new Error("Could not fetch resource");
+
+    }
+
+    const dataTableService = await response.json();
+    console.log(dataTableService);
+    return dataTableService;
 
   }
 
@@ -29,43 +81,60 @@ async function fetchApi() {
 };
 
 //================================================================================================================================================================================================
-// Info: Synchronisation data dans des constantes
+// Info: Synchronisation des data dans des constantes
 //================================================================================================================================================================================================
 
-let globalData;
-let dataModif;
+let globalDataChambre;
+let globalDataRestau;
+let globalDataService;
 
-fetchApi().then(data => {
+fetchApiChambre().then(data => {
 
-  globalData = data;
-  dataModif = globalData;
-  afficherData(globalData);
+  globalDataChambre = data;
+  afficherDataChambre(globalDataChambre);
+
+});
+
+fetchApiRestau().then(data => {
+
+  globalDataRestau = data;
+  afficherDataRestau(globalDataRestau);
+
+});
+
+fetchApiService().then(data => {
+
+  globalDataService = data;
+  afficherDataService(globalDataService);
 
 });
 
 //================================================================================================================================================================================================
-// Info: Fonction pour afficher la data de l'API en random avec animation
+// Info: Fonction pour afficher la data des l'API
 //================================================================================================================================================================================================
 
-function afficherData(dataa) {
+function afficherDataChambre(dataa) {
 
   const afficherChambre = document.getElementById("chambre");
   afficherChambre.innerHTML = '';
 
   dataa.data.forEach(user => {
+
     afficherChambre.innerHTML +=
-      `<div class="container p-6 my-6 mt-0 mx-auto">
-        <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
-          <div class="lg:flex">
-            <div class="lg:w-1/2">
-              <img src="./images/articleaccueil.jpg" alt="Présentation" class="object-cover w-full h-full">
-            </div>
-            <div class="p-6 lg:w-1/2">
-              <h2 class="mb-4 text-3xl font-bold">${user.titre}
-              </h2>
-              <p class="mb-4 text-black">${user.description}
-              </p>
-              <h2 class="mb-1 text-xl font-medium text-green-400 dark:text-green-400 pb-4">${user.price}€</h2>
+      `<div class="w-full bg-[${user.color}]">
+        <div class="container p-6 mx-auto">
+          <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+            <div class="lg:flex">
+              <div class="lg:w-1/2">
+                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation" class="object-cover w-full h-full">
+              </div>
+              <div class="p-6 lg:w-1/2">
+                <h2 class="mb-4 text-3xl font-bold">${user.titre}
+                </h2>
+                <p class="lg:mb-96 mb-4 text-black">${user.description}
+                </p>
+                <h2 class="mb-1 text-4xl font-medium text-pink-500">${user.price}€</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -75,6 +144,71 @@ function afficherData(dataa) {
 
 };
 
+function afficherDataRestau(dataa) {
+
+  const afficherRestau = document.getElementById("restau");
+  afficherRestau.innerHTML = '';
+
+  dataa.data.forEach(user => {
+
+    afficherRestau.innerHTML +=
+      `<div class="lg:w-[35%]">
+        <div class="sm:container md:container p-6 my-6 mb-0 mx-auto">
+          <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+            <div class="">
+              <div class="">
+                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation"
+                  class="object-cover w-full h-full">
+              </div>
+              <div class="p-6">
+                <h2 class="mb-4 text-3xl font-bold">${user.titre}
+                </h2>
+                <p class="mb-4 text-black">${user.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+  });
+
+};
+
+function afficherDataService(dataa) {
+
+  const afficherService = document.getElementById("service");
+  afficherService.innerHTML = '';
+
+  dataa.data.forEach(user => {
+
+    afficherService.innerHTML +=
+      `<div class="lg:w-[35%]">
+        <div class="sm:container md:container p-6 my-6 mb-0 mx-auto">
+          <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+            <div class="">
+              <div class="">
+                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation"
+                  class="object-cover w-full h-full">
+              </div>
+              <div class="p-6">
+                <h2 class="mb-4 text-3xl font-bold">${user.titre}
+                </h2>
+                <p class="mb-4 text-black">${user.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+  });
+
+};
+
+//================================================================================================================================================================================================
+// Info: Modification du burger menu de Flowbite pour qu'il soit a droite de force
+//================================================================================================================================================================================================
 
 
 const sideBar = document.getElementById("logo-sidebar");
@@ -86,7 +220,7 @@ setTimeout(() => {
   sideBar.classList.remove('left-0');
   sideBar.classList.remove('hidden');
 
-}, 30);
+}, 40);
 
 
 setInterval(() => {
@@ -94,6 +228,10 @@ setInterval(() => {
   sideBar.classList.remove('-translate-x-full');
 
 }, 1);
+
+//================================================================================================================================================================================================
+// Info: Fonction pour les confettis coeur
+//================================================================================================================================================================================================
 
 function loveexplosion() {
 
@@ -128,6 +266,10 @@ function loveexplosion() {
 };
 
 loveexplosion();
+
+//================================================================================================================================================================================================
+// Info: Fonction pour le logo qui retourne tout en haut de la page en cliquant dessus
+//================================================================================================================================================================================================
 
 let buttonPalais = document.getElementById("ButtonPalais");
 
