@@ -54,12 +54,39 @@ async function fetchApiRestau() {
 
 };
 
+async function fetchApiService() {
+
+  try {
+
+    const response = await fetch("http://localhost:1337/api/services?populate=*");
+
+    if (!response.ok) {
+
+      throw new Error("Could not fetch resource");
+
+    }
+
+    const dataTableService = await response.json();
+    console.log(dataTableService);
+    return dataTableService;
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+  }
+
+};
+
 //================================================================================================================================================================================================
 // Info: Synchronisation des data dans des constantes
 //================================================================================================================================================================================================
 
 let globalDataChambre;
 let globalDataRestau;
+let globalDataService;
 
 fetchApiChambre().then(data => {
 
@@ -72,6 +99,13 @@ fetchApiRestau().then(data => {
 
   globalDataRestau = data;
   afficherDataRestau(globalDataRestau);
+
+});
+
+fetchApiService().then(data => {
+
+  globalDataService = data;
+  afficherDataService(globalDataService);
 
 });
 
@@ -99,7 +133,7 @@ function afficherDataChambre(dataa) {
                 </h2>
                 <p class="lg:mb-96 mb-4 text-black">${user.description}
                 </p>
-                <h2 class="mb-1 text-4xl font-medium text-green-400">${user.price}€</h2>
+                <h2 class="mb-1 text-4xl font-medium text-pink-500">${user.price}€</h2>
               </div>
             </div>
           </div>
@@ -118,6 +152,37 @@ function afficherDataRestau(dataa) {
   dataa.data.forEach(user => {
 
     afficherRestau.innerHTML +=
+      `<div class="lg:w-[35%]">
+        <div class="sm:container md:container p-6 my-6 mb-0 mx-auto">
+          <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
+            <div class="">
+              <div class="">
+                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation"
+                  class="object-cover w-full h-full">
+              </div>
+              <div class="p-6">
+                <h2 class="mb-4 text-3xl font-bold">${user.titre}
+                </h2>
+                <p class="mb-4 text-black">${user.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+  });
+
+};
+
+function afficherDataService(dataa) {
+
+  const afficherService = document.getElementById("service");
+  afficherService.innerHTML = '';
+
+  dataa.data.forEach(user => {
+
+    afficherService.innerHTML +=
       `<div class="lg:w-[35%]">
         <div class="sm:container md:container p-6 my-6 mb-0 mx-auto">
           <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
