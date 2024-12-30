@@ -118,7 +118,7 @@ function afficherDataChambre(dataa) {
   dataa.data.forEach(user => {
 
     afficherChambre.innerHTML +=
-      `<div class="w-full bg-[${user.color}]">
+      `<div class="w-[95%] my-6 bg-[${user.color}] shadow-2xl rounded-xl">
         <div class="container p-6 mx-auto">
           <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
             <div class="lg:flex">
