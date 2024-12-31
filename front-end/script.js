@@ -6,7 +6,7 @@ async function fetchApiChambre() {
 
   try {
 
-    const response = await fetch("http://localhost:1337/api/chambres?populate=*");
+    const response = await fetch("./Chambre.json");
 
     if (!response.ok) {
 
@@ -31,7 +31,7 @@ async function fetchApiRestau() {
 
   try {
 
-    const response = await fetch("http://localhost:1337/api/restaurations?populate=*");
+    const response = await fetch("./Restauration.json");
 
     if (!response.ok) {
 
@@ -56,7 +56,7 @@ async function fetchApiService() {
 
   try {
 
-    const response = await fetch("http://localhost:1337/api/services?populate=*");
+    const response = await fetch("./Service.json");
 
     if (!response.ok) {
 
@@ -123,7 +123,7 @@ function afficherDataChambre(dataa) {
           <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
             <div class="lg:flex">
               <div class="lg:w-1/2">
-                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation" class="object-cover w-full h-full">
+                <img src="./images/chambres/${user.image.name}" alt="Présentation" class="object-cover w-full h-full">
               </div>
               <div class="p-6 lg:w-1/2">
                 <h2 class="mb-4 text-3xl font-bold">${user.titre}
@@ -154,7 +154,7 @@ function afficherDataRestau(dataa) {
           <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
             <div class="">
               <div class="">
-                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation"
+                <img src="./images/repas/${user.image.name}" alt="Présentation"
                   class="object-cover w-full h-full">
               </div>
               <div class="p-6">
@@ -185,7 +185,7 @@ function afficherDataService(dataa) {
           <div class="overflow-hidden bg-[#E6E6FA] rounded-lg shadow-lg">
             <div class="">
               <div class="">
-                <img src="http://localhost:1337${user.image.formats.large.url}" alt="Présentation"
+                <img src="./images/services/${user.image.name}" alt="Présentation"
                   class="object-cover w-full h-full">
               </div>
               <div class="p-6">
