@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Hebergement</title>
+  <meta name="Content-Type" content="UTF-8">
+  <meta name="Content-Language" content="fr">
+  <meta name="Description" content="Au Palais des Princesses, on vous offre une expérience royale inoubliable. Découvrez nos services exclusifs tels que
+    Reine d'un Jour, notre salon de beauté royal, et notre spa de princesse pour une détente ultime. Promenez-vous dans
+    notre jardin enchanté et laissez-vous séduire par le charme et l'élégance de nos espaces. Que vous soyez ici pour
+    une escapade romantique, un voyage d'affaires ou une célébration spéciale, notre équipe dévouée est à votre
+    disposition pour répondre à tous vos besoins">
+  <meta name="Keywords"
+    content="Princesse, Hôtel, Airbnb, Reine, Royauté, Donjon, Château, Palais, Roi, Prince, Chambre, Service, Contacte, Accueil">
+  <meta name="Subject" content="Hôtel">
+  <meta name="Copyright" content="© 2024 Adrien et Jonathan. Tout Droits Reservés">
+  <meta name="Author" content="Adrien et Jonathan">
+  <meta name="Revisit-After" content="15 days">
+  <meta name="Robots" content="all">
+  <meta name="Rating" content="general">
+  <meta name="Distribution" content="global">
+  <meta name="Category" content="travel">
+</head>
+
+<body class="flex flex-col ">
+
+  <header>
+    <nav class="top-0 z-50 py-50 bg-local bg-center bg-no-repeat bg-cover h-[90vh] border-b border-gray-200"
+      style="background-image: url(./images/chateaurincesse.jpg);">
+      <div class="px-3 py-3 lg:px-5 lg:pl-3">
+        <div class="flex justify-center">
+          <div class="flex flex-col">
+            <div class="flex items-center justify-center basis-full">
+              <img src="./images/palaisprincesse.png" alt=""
+                class="self-center mt-[30vh] text-xl max-w-[85%] lg:max-w-[100%] bg-[#FFC0CB]/[.4] p-2 rounded-[50px]">
+              <div class="heart-shape max-w-[80%] lg:max-w-[100%]"></div>
+            </div>
+            <img src="./images/titres/chambre.png" alt=""
+              class="self-center mt-[10vh] text-xl max-w-[45%] lg:max-w-[30%] bg-[#FFC0CB]/[.4] p-2 rounded-[50px]">
+          </div>
+          <div class="absolute right-0 flex">
+            <div class="ms-3">
+              <div>
+                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+                  type="button" id="menu"
+                  class="mr-4 inline-flex items-center p-2 text-sm text-white rounded-lg bg-[#FFC0CB] focus:outline-none focus:ring-2 focus:ring-gray-200">
+                  <span class="sr-only">Open sidebar</span>
+                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" fill-rule="evenodd"
+                      d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <aside id="logo-sidebar"
+      class="fixed top-0 z-40 w-1/2 md:w-96 h-screen pt-20 transition-transform hidden translate-x-full bg-[#FF69B4]/50 border-r border-gray-200"
+      aria-label="Sidebar">
+      <div class="h-full px-3 pb-4 overflow-y-auto">
+        <ul class="space-y-2 font-medium text-center" id="boutonpage">
+          <li>
+            <a href="./index.html" class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Accueil</span>
+            </a>
+          </li>
+          <li>
+            <a href="./hebergement.html"
+              class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Chambre</span>
+            </a>
+          </li>
+          <li>
+            <a href="./restauration.html"
+              class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Restauration</span>
+            </a>
+          </li>
+          <li>
+            <a href="./services.html" class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Service</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="flex items-center p-2 text-white rounded-lg hover:bg-[#FFC0CB]/50 group">
+              <span class="flex-1 ms-3 whitespace-nowrap">Contact</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </aside>
+  </header>
+
+  <main class="flex min-h-screen bg-[#FFFDD0] flex-col">
+
+    <div class="justify-items-center" id="chambre">
+      <div class="container p-6 my-6 mb-0 mx-auto">
+        <div class="overflow-hidden bg-white rounded-lg shadow-lg">
+          <div class="lg:flex">
+            <div class="">
+              <div role="status"
+                class="space-y-8 w-full h-full animate-pulse lg:space-y-0 lg:space-x-8 rtl:space-x-reverse lg:flex lg:items-center">
+                <div class="flex items-center justify-center w-full h-full bg-gray-300 rounded lg:w-96">
+                  <svg class="w-10 h-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 20 18">
+                    <path
+                      d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
+                  </svg>
+                </div>
+                <span class="sr-only">Chargement...</span>
+              </div>
+            </div>
+            <div class="p-6 lg:w-1/2">
+              <div class="w-full">
+                <div class="h-2.5 bg-gray-200 rounded-full w-48 mb-4"></div>
+                <div class="h-2 bg-gray-200 rounded-full max-w-[480px] mb-2.5"></div>
+                <div class="h-2 bg-gray-200 rounded-full mb-2.5"></div>
+                <div class="h-2 bg-gray-200 rounded-full max-w-[440px] mb-2.5"></div>
+                <div class="h-2 bg-gray-200 rounded-full max-w-[460px] mb-2.5"></div>
+                <div class="h-2 bg-gray-200 rounded-full max-w-[360px]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full bg-sky-100">
+      <div class="container my-6 p-6 mx-auto">
+        <div class="overflow-hidden bg-[#E6D7B9] rounded-lg shadow-lg">
+          <div class="lg:flex flex-col">
+            <div id="default-carousel" class="relative w-full" data-carousel="slide">
+              <!-- Carousel wrapper -->
+              <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="./images/repas/gateaudefeesauxamandes.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="./images/repas/macaron.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="./images/repas/pouletrotiauxherbesdelaforet.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="./images/repas/smoothielicorne.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 5 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="./images/repas/soupedecitrouilleenchantee.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 6 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="./images/repas/brochettedefruitsenchantes.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 7 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="./images/repas/tarteletteauxbaiesmagiques.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+              </div>
+              <!-- Slider indicators -->
+              <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                  data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                  data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                  data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                  data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                  data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                  data-carousel-slide-to="5"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                  data-carousel-slide-to="6"></button>
+              </div>
+              <!-- Slider controls -->
+              <button type="button"
+                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 1 1 5l4 4" />
+                  </svg>
+                  <span class="sr-only">Previous</span>
+                </span>
+              </button>
+              <button type="button"
+                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next>
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 9 4-4-4-4" />
+                  </svg>
+                  <span class="sr-only">Next</span>
+                </span>
+              </button>
+            </div>
+            <div class="p-6 lg:w-full">
+              <h2 class="mb-4 text-3xl font-bold">Un banquet pour satisfaire les palais les plus delicats
+              </h2>
+              <p class="mb-4 text-black">Plongez dans un univers culinaire où la magie des contes de fées se mêle aux
+                saveurs exquises. Notre espace restauration a été conçu pour vous offrir une expérience gastronomique
+                unique, où chaque bouchée est une invitation à rêver et à s'émerveiller, vous offrir un cadre
+                enchanteur, où chaque détail a été pensé pour
+                vous faire vivre une expérience culinaire inoubliable.<br>Que vous soyez en famille, en couple ou
+                entre amis, venez découvrir nos plats féeriques et laissez-vous transporter dans un monde de saveurs et
+                de magie.
+              </p>
+              <a href="./restauration.html" class="px-4 py-2 text-white bg-[#F7B6BA] rounded hover:bg-[#B76E79]">En
+                savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="flex-1 bg-[#F7B6BA] shadow">
+    <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <button id="ButtonPalais" class="flex items-center mb-4 ml-6 space-x-3 sm:mb-0 rtl:space-x-reverse">
+          <img src="./images/palaisprincesse.png"
+            class="lg:h-20 md:h-16 h-14 sm:text-2xl whitespace-nowrap bg-[#F5F5DC] text-white items-center p-2 text-white rounded-[20px]"
+            alt="logo">
+        </button>
+        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0">
+          <li>
+            <a href="./contact.html" class="hover:underline">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <hr class="my-6 border-white sm:mx-auto lg:my-8">
+      <span class="block text-sm text-white sm:text-center">© 2024 Adrien et Jonathan. Tout Droits Reservés.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
